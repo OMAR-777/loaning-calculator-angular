@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { NavComponent } from './nav/nav.component';
 import { FlexMortgageComponent } from './flex-mortgage/flex-mortgage.component';
 import { BenefitsComponent } from './benefits/benefits.component';
+import { FinanceDetailsComponent } from './finance-details/finance-details.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BenefitsComponent } from './benefits/benefits.component';
     MortgageComponent,
     NavComponent,
     FlexMortgageComponent,
-    BenefitsComponent
+    BenefitsComponent,
+    FinanceDetailsComponent
   ],
   imports: [
     BrowserModule,

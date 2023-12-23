@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { max } from 'rxjs';
 import { FinanceDetails } from '../_models/financeDetails';
+import { FinanceType } from '../_models/enums';
 
 @Component({
   selector: 'app-mortgage',
@@ -14,6 +15,7 @@ export class MortgageComponent {
   years: number = 25;
 
   finance?: FinanceDetails;
+  FinanceType = FinanceType;
 
   calculate(){
     this.finance = {} as FinanceDetails;

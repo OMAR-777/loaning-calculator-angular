@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FinanceDetails } from '../_models/financeDetails';
 import { isEmptyObject } from '../_utils/helpers';
+import { FinanceType } from '../_models/enums';
 
 @Component({
   selector: 'app-flex-mortgage',
@@ -15,15 +16,15 @@ export class FlexMortgageComponent {
   loanBenefitsRate: number = 3.70;
   years: number = 25;
 
-
   finance?: FinanceDetails;
-  
+  FinanceType = FinanceType;
 
   calculate(){
     this.finance = {} as FinanceDetails;
 
     this.finance.monthlyInstallment = this.salary * (this.totalDeductionRate/100);
     this.finance.mortgMonthlyInstallment = ((this.totalDeductionRate - this.loanDeductionRate)/100)*this.salary;
+    this.finance.persMonthlyInstallment = (this.loanDeductionRate/100)*this.salary;
 
 
     this.finance.totalDebt = this.finance.monthlyInstallment * 12 * this.years;

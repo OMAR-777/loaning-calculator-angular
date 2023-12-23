@@ -60,24 +60,8 @@
     </div>
 
     <div class="col-md-8">
-      <div *ngIf="finance" class="card mt-3">
-        <h2 class="card-header">تفاصيل التمويل</h2>
-        <div class="card-body">
-          <h5 class="card-title">
-            القرض العقاري: {{ finance.mortgLoan | number : "1.2-2" }}
-          </h5>
-          <div class="mb-1">
-            القسط الشهري:
-            {{ finance.monthlyInstallment | number : "1.2-2" }}
-          </div>
-          <div class="mb-1">
-            الارباح: {{ finance.mortgLoanBenefits | number : "1.2-2" }}
-          </div>
-          <div class="mb-1">
-            المديونية: {{ finance.mortgLoanDebt | number : "1.2-2" }}
-          </div>
-        </div>
-      </div>
+      <app-finance-details [finance]="finance" [financeType]="FinanceType.MortgageLoan"></app-finance-details>
     </div>
+    
   </div>
 </div>

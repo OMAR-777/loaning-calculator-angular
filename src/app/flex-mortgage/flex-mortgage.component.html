@@ -91,48 +91,10 @@
         <button class="btn btn-success" type="submit">حساب</button>
       </form>
     </div>
+    
     <div class="col-md-8">
-      <div *ngIf="finance" class="card mt-3">
-        <h2 class="card-header">تفاصيل التمويل</h2>
-        <div class="card-body">
-          <h5 class="card-title">
-            القرض الإجمالي {{ finance.totalLoan | number : "1.2-2" }}
-          </h5>
-          <div class="mb-1">
-            القسط الشهري: {{ finance.monthlyInstallment | number : "1.2-2" }}
-          </div>
-          <div class="mb-3">
-            القسط الشهري العقاري (أول ٥ سنوات):
-            {{ finance.mortgMonthlyInstallment | number : "1.2-2" }}
-          </div>
-          <div class="mb-1">
-            القرض العقاري: {{ finance.mortgLoan | number : "1.2-2" }}
-          </div>
-          <div class="mb-1">
-            ارباح القرض العقاري:
-            {{ finance.mortgLoanBenefits | number : "1.2-2" }}
-          </div>
-          <div class="mb-3">
-            مديونية القرض العقاري: {{ finance.mortgLoanDebt | number : "1.2-2" }}
-          </div>
-          <div class="mb-1">
-            القرض الشخصي: {{ finance.persLoan | number : "1.2-2" }}
-          </div>
-          <div class="mb-1">
-            ارباح القرض الشخصي:
-            {{ finance.persLoanBenefits | number : "1.2-2" }}
-          </div>
-          <div class="mb-3">
-            مديونية القرض الشخصي: {{ finance.persLoanDebt | number : "1.2-2" }}
-          </div>
-          <div class="mb-1">
-            اجمالي الارباح: {{ finance.totalBenefits | number : "1.2-2" }}
-          </div>
-          <div class="mb-1">
-            اجمالي المديونية: {{ finance.totalDebt | number : "1.2-2" }}
-          </div>
-        </div>
-      </div>
+      <app-finance-details [finance]="finance" [financeType]="FinanceType.FlexibleMortgageLoan"></app-finance-details>
     </div>
+
   </div>
 </div>
