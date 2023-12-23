@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-benefits',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./benefits.component.css']
 })
 export class BenefitsComponent {
+  faCalculator = faCalculator;
+
   loan: number = 163747;
   debt: number = 194040;
   years: number = 5;

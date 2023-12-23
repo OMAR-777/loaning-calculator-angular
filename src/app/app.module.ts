@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { FlexMortgageComponent } from './flex-mortgage/flex-mortgage.component';
 import { BenefitsComponent } from './benefits/benefits.component';
 import { FinanceDetailsComponent } from './finance-details/finance-details.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FinanceDetailsComponent } from './finance-details/finance-details.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
     ],
   providers: [],
   bootstrap: [AppComponent]

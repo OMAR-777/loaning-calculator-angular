@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FinanceDetails } from '../_models/financeDetails';
 import { isEmptyObject } from '../_utils/helpers';
 import { FinanceType } from '../_models/enums';
+import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-flex-mortgage',
@@ -9,6 +10,8 @@ import { FinanceType } from '../_models/enums';
   styleUrls: ['./flex-mortgage.component.css']
 })
 export class FlexMortgageComponent {
+  faCalculator = faCalculator;
+
   salary: number = 9800;
   totalDeductionRate: number = 55;
   loanDeductionRate: number = 33;
