@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
+          <div class="mb-3">
+            <label for="loan">Loan</label>
+            <input
+              name="loan"
+              [(ngModel)]="loan"
+              class="form-control me-2"
+              type="number"
+              placeholder="loan"
+            />
+          </div>
+  
+          <div class="mb-3">
+            <label for="years">Years</label>
+  
+            <input
+              name="years"
+              [(ngModel)]="years"
+              class="form-control me-2"
+              type="number"
+              placeholder="Years"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="debt">Debt</label>
+  
+            <input
+              name="debt"
+              [(ngModel)]="debt"
+              class="form-control me-2"
+              type="number"
+              placeholder="debt"
+            />
+          </div>
+          <button class="btn btn-success" type="submit">Calculate</button>
+        </form>
+      </div>
+  
+      <div class="col-md-8">
+        <div *ngIf="benefitsRate" class="card mt-3">
+          <h2 class="card-header">Benefits Details:</h2>
+          <div class="card-body">
+            <h5 class="card-title">
+              Benefits Rate: {{ benefitsRate * 100 | number : "1.2-2" }}%
+            </h5>
+            <div class="mb-1">
+                Yearly Benefits: {{ calcYearlyBenefits | number : "1.2-2" }}
+            </div>
+            <div class="mb-1">
+                Total Benefits: {{ calcTotalBenefits | number : "1.2-2" }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

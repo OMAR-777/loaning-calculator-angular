@@ -7,13 +7,15 @@ import { MortgageComponent } from './mortgage/mortgage.component';
 import { FormsModule } from '@angular/forms';
 import { NavComponent } from './nav/nav.component';
 import { FlexMortgageComponent } from './flex-mortgage/flex-mortgage.component';
+import { BenefitsComponent } from './benefits/benefits.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MortgageComponent,
     NavComponent,
-    FlexMortgageComponent
+    FlexMortgageComponent,
+    BenefitsComponent
   ],
   imports: [
     BrowserModule,
