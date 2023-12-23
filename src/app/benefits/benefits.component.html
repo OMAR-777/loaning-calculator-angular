@@ -3,7 +3,7 @@
       <div class="col-md-4">
         <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
           <div class="mb-3">
-            <label for="loan">Loan</label>
+            <label for="loan">القرض</label>
             <input
               name="loan"
               [(ngModel)]="loan"
@@ -14,7 +14,7 @@
           </div>
   
           <div class="mb-3">
-            <label for="years">Years</label>
+            <label for="years">المدة (بالسنوات)</label>
   
             <input
               name="years"
@@ -26,7 +26,7 @@
           </div>
 
           <div class="mb-3">
-            <label for="debt">Debt</label>
+            <label for="debt">المديونية</label>
   
             <input
               name="debt"
@@ -36,22 +36,22 @@
               placeholder="debt"
             />
           </div>
-          <button class="btn btn-success" type="submit">Calculate</button>
+          <button class="btn btn-success" type="submit">حساب</button>
         </form>
       </div>
   
       <div class="col-md-8">
         <div *ngIf="benefitsRate" class="card mt-3">
-          <h2 class="card-header">Benefits Details:</h2>
+          <h2 class="card-header">تفاصيل الأرباح</h2>
           <div class="card-body">
             <h5 class="card-title">
-              Benefits Rate: {{ benefitsRate * 100 | number : "1.2-2" }}%
+              هامش الربح السنوي: {{ benefitsRate * 100 | number : "1.2-2" }}%
             </h5>
             <div class="mb-1">
-                Yearly Benefits: {{ calcYearlyBenefits | number : "1.2-2" }}
+                الارباح السنوية: {{ calcYearlyBenefits | number : "1.2-2" }}
             </div>
             <div class="mb-1">
-                Total Benefits: {{ calcTotalBenefits | number : "1.2-2" }}
+                اجمالي الأرباح: {{ calcTotalBenefits | number : "1.2-2" }}
             </div>
           </div>
         </div>

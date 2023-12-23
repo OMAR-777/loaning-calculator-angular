@@ -3,7 +3,7 @@
     <div class="col-md-4">
       <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
         <div class="mb-3">
-          <label for="salary">Salary</label>
+          <label for="salary">الراتب (صافي)</label>
           <input
             name="salary"
             [(ngModel)]="salary"
@@ -14,7 +14,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="deductionRate">Deduction Rate</label>
+          <label for="deductionRate">نسبة الإستقطاع</label>
           <div class="input-group">
             <input
               name="deductionRate"
@@ -30,7 +30,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="benefitsRate">Benefits Rate</label>
+          <label for="benefitsRate">هامش الربح السنوي</label>
           <div class="input-group">
             <input
               name="benefitsRate"
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="mb-3">
-          <label for="years">Years</label>
+          <label for="years">المدة (بالسنوات)</label>
 
           <input
             name="years"
@@ -55,26 +55,26 @@
             placeholder="Years"
           />
         </div>
-        <button class="btn btn-success" type="submit">Calculate</button>
+        <button class="btn btn-success" type="submit">حساب</button>
       </form>
     </div>
 
     <div class="col-md-8">
       <div *ngIf="finance" class="card mt-3">
-        <h2 class="card-header">Finance Details:</h2>
+        <h2 class="card-header">تفاصيل التمويل</h2>
         <div class="card-body">
           <h5 class="card-title">
-            Mortgage Loan: {{ finance.mortgLoan | number : "1.2-2" }}
+            القرض العقاري: {{ finance.mortgLoan | number : "1.2-2" }}
           </h5>
           <div class="mb-1">
-            Monthly Installment:
+            القسط الشهري:
             {{ finance.monthlyInstallment | number : "1.2-2" }}
           </div>
           <div class="mb-1">
-            Benefits: {{ finance.mortgLoanBenefits | number : "1.2-2" }}
+            الارباح: {{ finance.mortgLoanBenefits | number : "1.2-2" }}
           </div>
           <div class="mb-1">
-            Total Debt: {{ finance.mortgLoanDebt | number : "1.2-2" }}
+            المديونية: {{ finance.mortgLoanDebt | number : "1.2-2" }}
           </div>
         </div>
       </div>
