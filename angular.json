@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mortgage-calculator": {
+    "loaning-calculator": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mortgage-calculator",
+            "outputPath": "dist/loaning-calculator",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mortgage-calculator:build:production"
+              "browserTarget": "loaning-calculator:build:production"
             },
             "development": {
-              "browserTarget": "mortgage-calculator:build:development"
+              "browserTarget": "loaning-calculator:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mortgage-calculator:build"
+            "browserTarget": "loaning-calculator:build"
           }
         },
         "test": {
