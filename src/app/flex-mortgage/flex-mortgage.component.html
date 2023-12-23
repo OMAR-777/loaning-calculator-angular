@@ -1,109 +1,109 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
-        <div class="mb-3">
-          <label for="salary">الراتب (صافي)</label>
+<div class="d-lg-none d-block mb-3">
+  <h2>القرض العقاري المرن</h2>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
+      <div class="mb-3">
+        <label for="salary">الراتب (صافي)</label>
+        <input
+          name="salary"
+          [(ngModel)]="salary"
+          class="form-control me-2"
+          type="number"
+          placeholder="Salary"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="totalDeductionRate">نسبة الإستقطاع الكلية</label>
+        <div class="input-group">
           <input
-            name="salary"
-            [(ngModel)]="salary"
+            name="totalDeductionRate"
+            [(ngModel)]="totalDeductionRate"
             class="form-control me-2"
             type="number"
-            placeholder="Salary"
+            placeholder="Total Deduction Rate"
           />
-        </div>
-
-        <div class="mb-3">
-          <label for="totalDeductionRate">نسبة الإستقطاع الكلية</label>
-          <div class="input-group">
-            <input
-              name="totalDeductionRate"
-              [(ngModel)]="totalDeductionRate"
-              class="form-control me-2"
-              type="number"
-              placeholder="Total Deduction Rate"
-            />
-            <div class="input-group-append">
-              <span class="input-group-text">%</span>
-            </div>
+          <div class="input-group-append">
+            <span class="input-group-text">%</span>
           </div>
         </div>
+      </div>
 
-        <div class="mb-3">
-          <label for="loanDeductionRate">نسبة إستقطاع القرض الشخصي</label>
-          <div class="input-group">
-            <input
-              name="loanDeductionRate"
-              [(ngModel)]="loanDeductionRate"
-              class="form-control me-2"
-              type="number"
-              placeholder="Loan Deduction Rate"
-            />
-            <div class="input-group-append">
-              <span class="input-group-text">%</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="mortgBenefitsRate">هامش ربح القرض العقاري السنوي</label>
-          <div class="input-group">
-            <input
-              name="mortgBenefitsRate"
-              [(ngModel)]="mortgBenefitsRate"
-              class="form-control me-2"
-              type="number"
-              placeholder="Mortgage Benefits Rate"
-            />
-            <div class="input-group-append">
-              <span class="input-group-text">%</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="loanBenefitsRate">هامش ربح القرض الشخصي السنوي</label>
-          <div class="input-group">
-            <input
-              name="loanBenefitsRate"
-              [(ngModel)]="loanBenefitsRate"
-              class="form-control me-2"
-              type="number"
-              placeholder="Loan Benefits Rate"
-            />
-            <div class="input-group-append">
-              <span class="input-group-text">%</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="years">المدة (بالسنوات)</label>
-
+      <div class="mb-3">
+        <label for="loanDeductionRate">نسبة إستقطاع القرض الشخصي</label>
+        <div class="input-group">
           <input
-            name="years"
-            [(ngModel)]="years"
+            name="loanDeductionRate"
+            [(ngModel)]="loanDeductionRate"
             class="form-control me-2"
             type="number"
-            placeholder="Years"
+            placeholder="Loan Deduction Rate"
           />
+          <div class="input-group-append">
+            <span class="input-group-text">%</span>
+          </div>
         </div>
+      </div>
 
-        <div class="d-grid">
-          <button class="btn btn-success btn-lg" type="submit">
-            حساب
-            <fa-icon [icon]="faCalculator"></fa-icon>
-          </button>
+      <div class="mb-3">
+        <label for="mortgBenefitsRate">هامش ربح القرض العقاري السنوي</label>
+        <div class="input-group">
+          <input
+            name="mortgBenefitsRate"
+            [(ngModel)]="mortgBenefitsRate"
+            class="form-control me-2"
+            type="number"
+            placeholder="Mortgage Benefits Rate"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text">%</span>
+          </div>
         </div>
-        
-      </form>
-    </div>
+      </div>
 
-    <div class="col-md-8">
-      <app-finance-details
-        [finance]="finance"
-        [financeType]="FinanceType.FlexibleMortgageLoan"
-      ></app-finance-details>
-    </div>
+      <div class="mb-3">
+        <label for="loanBenefitsRate">هامش ربح القرض الشخصي السنوي</label>
+        <div class="input-group">
+          <input
+            name="loanBenefitsRate"
+            [(ngModel)]="loanBenefitsRate"
+            class="form-control me-2"
+            type="number"
+            placeholder="Loan Benefits Rate"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="years">المدة (بالسنوات)</label>
+
+        <input
+          name="years"
+          [(ngModel)]="years"
+          class="form-control me-2"
+          type="number"
+          placeholder="Years"
+        />
+      </div>
+
+      <div class="d-grid">
+        <button class="btn btn-success btn-lg" type="submit">
+          <fa-icon [icon]="faCalculator"></fa-icon>
+          حساب
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-8">
+    <app-finance-details
+      [finance]="finance"
+      [financeType]="FinanceType.FlexibleMortgageLoan"
+    ></app-finance-details>
   </div>
 </div>

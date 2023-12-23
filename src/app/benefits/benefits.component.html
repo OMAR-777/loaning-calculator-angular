@@ -1,65 +1,65 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-4">
-      <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
-        <div class="mb-3">
-          <label for="loan">القرض</label>
-          <input
-            name="loan"
-            [(ngModel)]="loan"
-            class="form-control me-2"
-            type="number"
-            placeholder="loan"
-          />
+<div class="d-lg-none d-block mb-3">
+  <h2>حاسبة الأرباح</h2>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
+      <div class="mb-3">
+        <label for="loan">القرض</label>
+        <input
+          name="loan"
+          [(ngModel)]="loan"
+          class="form-control me-2"
+          type="number"
+          placeholder="loan"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="years">المدة (بالسنوات)</label>
+
+        <input
+          name="years"
+          [(ngModel)]="years"
+          class="form-control me-2"
+          type="number"
+          placeholder="Years"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="debt">المديونية</label>
+
+        <input
+          name="debt"
+          [(ngModel)]="debt"
+          class="form-control me-2"
+          type="number"
+          placeholder="debt"
+        />
+      </div>
+
+      <div class="d-grid">
+        <button class="btn btn-success btn-lg" type="submit">
+          <fa-icon [icon]="faCalculator"></fa-icon>
+          حساب
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-8">
+    <div *ngIf="benefitsRate" class="card mt-3">
+      <h2 class="card-header">تفاصيل الأرباح</h2>
+      <div class="card-body">
+        <h5 class="card-title">
+          هامش الربح السنوي: {{ benefitsRate * 100 | number : "1.2-2" }}%
+        </h5>
+        <div class="mb-1">
+          الارباح السنوية: {{ calcYearlyBenefits | number : "1.2-2" }}
         </div>
-
-        <div class="mb-3">
-          <label for="years">المدة (بالسنوات)</label>
-
-          <input
-            name="years"
-            [(ngModel)]="years"
-            class="form-control me-2"
-            type="number"
-            placeholder="Years"
-          />
-        </div>
-
-        <div class="mb-3">
-          <label for="debt">المديونية</label>
-
-          <input
-            name="debt"
-            [(ngModel)]="debt"
-            class="form-control me-2"
-            type="number"
-            placeholder="debt"
-          />
-        </div>
-        
-        <div class="d-grid">
-            <button class="btn btn-success btn-lg" type="submit">
-              حساب
-              <fa-icon [icon]="faCalculator"></fa-icon>
-            </button>
-          </div>
-
-      </form>
-    </div>
-
-    <div class="col-md-8">
-      <div *ngIf="benefitsRate" class="card mt-3">
-        <h2 class="card-header">تفاصيل الأرباح</h2>
-        <div class="card-body">
-          <h5 class="card-title">
-            هامش الربح السنوي: {{ benefitsRate * 100 | number : "1.2-2" }}%
-          </h5>
-          <div class="mb-1">
-            الارباح السنوية: {{ calcYearlyBenefits | number : "1.2-2" }}
-          </div>
-          <div class="mb-1">
-            اجمالي الأرباح: {{ calcTotalBenefits | number : "1.2-2" }}
-          </div>
+        <div class="mb-1">
+          اجمالي الأرباح: {{ calcTotalBenefits | number : "1.2-2" }}
         </div>
       </div>
     </div>

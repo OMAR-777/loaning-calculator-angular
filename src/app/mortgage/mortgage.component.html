@@ -1,76 +1,76 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-4">
-      <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
-        <div class="mb-3">
-          <label for="salary">الراتب (صافي)</label>
+<div class="d-lg-none d-block mb-3">
+  <h2>القرض العقاري</h2>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
+      <div class="mb-3">
+        <label for="salary">الراتب (صافي)</label>
+        <input
+          name="salary"
+          [(ngModel)]="salary"
+          class="form-control me-2"
+          type="number"
+          placeholder="Salary"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="deductionRate">نسبة الإستقطاع</label>
+        <div class="input-group">
           <input
-            name="salary"
-            [(ngModel)]="salary"
+            name="deductionRate"
+            [(ngModel)]="deductionRate"
             class="form-control me-2"
             type="number"
-            placeholder="Salary"
+            placeholder="Deduction Rate"
           />
-        </div>
-
-        <div class="mb-3">
-          <label for="deductionRate">نسبة الإستقطاع</label>
-          <div class="input-group">
-            <input
-              name="deductionRate"
-              [(ngModel)]="deductionRate"
-              class="form-control me-2"
-              type="number"
-              placeholder="Deduction Rate"
-            />
-            <div class="input-group-append">
-              <span class="input-group-text">%</span>
-            </div>
+          <div class="input-group-append">
+            <span class="input-group-text">%</span>
           </div>
         </div>
+      </div>
 
-        <div class="mb-3">
-          <label for="benefitsRate">هامش الربح السنوي</label>
-          <div class="input-group">
-            <input
-              name="benefitsRate"
-              [(ngModel)]="benefitsRate"
-              class="form-control me-2"
-              type="number"
-              placeholder="Benefits Rate"
-            />
-            <div class="input-group-append">
-              <span class="input-group-text">%</span>
-            </div>
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="years">المدة (بالسنوات)</label>
-
+      <div class="mb-3">
+        <label for="benefitsRate">هامش الربح السنوي</label>
+        <div class="input-group">
           <input
-            name="years"
-            [(ngModel)]="years"
+            name="benefitsRate"
+            [(ngModel)]="benefitsRate"
             class="form-control me-2"
             type="number"
-            placeholder="Years"
+            placeholder="Benefits Rate"
           />
+          <div class="input-group-append">
+            <span class="input-group-text">%</span>
+          </div>
         </div>
-        
-        <div class="d-grid">
-          <button class="btn btn-success btn-lg" type="submit">
-            حساب
-            <fa-icon [icon]="faCalculator"></fa-icon>
-          </button>
-        </div>
+      </div>
+      <div class="mb-3">
+        <label for="years">المدة (بالسنوات)</label>
 
-      </form>
-    </div>
+        <input
+          name="years"
+          [(ngModel)]="years"
+          class="form-control me-2"
+          type="number"
+          placeholder="Years"
+        />
+      </div>
 
-    <div class="col-md-8">
-      <app-finance-details
-        [finance]="finance"
-        [financeType]="FinanceType.MortgageLoan"
-      ></app-finance-details>
-    </div>
+      <div class="d-grid">
+        <button class="btn btn-success btn-lg" type="submit">
+          <fa-icon [icon]="faCalculator"></fa-icon>
+          حساب
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-8">
+    <app-finance-details
+      [finance]="finance"
+      [financeType]="FinanceType.MortgageLoan"
+    ></app-finance-details>
   </div>
 </div>
