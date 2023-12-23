@@ -55,13 +55,17 @@
             placeholder="Years"
           />
         </div>
-        <button class="btn btn-success" type="submit">حساب</button>
+        <div class="d-grid">
+          <button class="btn btn-success btn-lg" type="submit">حساب</button>
+        </div>
       </form>
     </div>
 
     <div class="col-md-8">
-      <app-finance-details [finance]="finance" [financeType]="FinanceType.MortgageLoan"></app-finance-details>
+      <app-finance-details
+        [finance]="finance"
+        [financeType]="FinanceType.MortgageLoan"
+      ></app-finance-details>
     </div>
-    
   </div>
 </div>
