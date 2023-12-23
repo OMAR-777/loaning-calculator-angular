@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
+        <div class="mb-3">
+          <label for="salary">Salary</label>
+          <input
+            name="salary"
+            [(ngModel)]="salary"
+            class="form-control me-2"
+            type="number"
+            placeholder="Salary"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="deductionRate">Deduction Rate</label>
+          <div class="input-group">
+            <input
+              name="deductionRate"
+              [(ngModel)]="deductionRate"
+              class="form-control me-2"
+              type="number"
+              placeholder="Deduction Rate"
+            />
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="benefitsRate">Benefits Rate</label>
+          <div class="input-group">
+            <input
+              name="benefitsRate"
+              [(ngModel)]="benefitsRate"
+              class="form-control me-2"
+              type="number"
+              placeholder="Benefits Rate"
+            />
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="years">Years</label>
+
+          <input
+            name="years"
+            [(ngModel)]="years"
+            class="form-control me-2"
+            type="number"
+            placeholder="Years"
+          />
+        </div>
+        <button class="btn btn-success" type="submit">Calculate</button>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <div *ngIf="finance" class="card mt-3">
+        <h2 class="card-header">Finance Details:</h2>
+        <div class="card-body">
+          <h5 class="card-title">
+            Mortgage Loan: {{ finance.mortgLoan | number : "1.2-2" }}
+          </h5>
+          <div class="mb-1">
+            Monthly Installment:
+            {{ finance.monthlyInstallment | number : "1.2-2" }}
+          </div>
+          <div class="mb-1">
+            Benefits: {{ finance.mortgLoanBenefits | number : "1.2-2" }}
+          </div>
+          <div class="mb-1">
+            Total Debt: {{ finance.mortgLoanDebt | number : "1.2-2" }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

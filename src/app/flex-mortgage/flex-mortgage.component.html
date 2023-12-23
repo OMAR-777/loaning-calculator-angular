@@ -1,0 +1,138 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
+        <div class="mb-3">
+          <label for="salary">Salary</label>
+          <input
+            name="salary"
+            [(ngModel)]="salary"
+            class="form-control me-2"
+            type="number"
+            placeholder="Salary"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="totalDeductionRate">Total Deduction Rate</label>
+          <div class="input-group">
+            <input
+              name="totalDeductionRate"
+              [(ngModel)]="totalDeductionRate"
+              class="form-control me-2"
+              type="number"
+              placeholder="Total Deduction Rate"
+            />
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="loanDeductionRate">Loan Deduction Rate</label>
+          <div class="input-group">
+            <input
+              name="loanDeductionRate"
+              [(ngModel)]="loanDeductionRate"
+              class="form-control me-2"
+              type="number"
+              placeholder="Loan Deduction Rate"
+            />
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="mortgBenefitsRate">Mortgage Benefits Rate</label>
+          <div class="input-group">
+            <input
+              name="mortgBenefitsRate"
+              [(ngModel)]="mortgBenefitsRate"
+              class="form-control me-2"
+              type="number"
+              placeholder="Mortgage Benefits Rate"
+            />
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="loanBenefitsRate">Loan Benefits Rate</label>
+          <div class="input-group">
+            <input
+              name="loanBenefitsRate"
+              [(ngModel)]="loanBenefitsRate"
+              class="form-control me-2"
+              type="number"
+              placeholder="Loan Benefits Rate"
+            />
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="years">Years</label>
+
+          <input
+            name="years"
+            [(ngModel)]="years"
+            class="form-control me-2"
+            type="number"
+            placeholder="Years"
+          />
+        </div>
+        <button class="btn btn-success" type="submit">Calculate</button>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="finance" class="card mt-3">
+        <h2 class="card-header">Finance Details:</h2>
+        <div class="card-body">
+          <h5 class="card-title">
+            Total Loan: {{ finance.totalLoan | number : "1.2-2" }}
+          </h5>
+          <div class="mb-1">
+            Installment: {{ finance.monthlyInstallment | number : "1.2-2" }}
+          </div>
+          <div class="mb-3">
+            First Mortgage Installment:
+            {{ finance.mortgMonthlyInstallment | number : "1.2-2" }}
+          </div>
+          <div class="mb-1">
+            Mortgage Loan: {{ finance.mortgLoan | number : "1.2-2" }}
+          </div>
+          <div class="mb-1">
+            Mortgage Loan Benefits:
+            {{ finance.mortgLoanBenefits | number : "1.2-2" }}
+          </div>
+          <div class="mb-3">
+            Mortgage Loan Debt: {{ finance.mortgLoanDebt | number : "1.2-2" }}
+          </div>
+          <div class="mb-1">
+            Personal Loan: {{ finance.persLoan | number : "1.2-2" }}
+          </div>
+          <div class="mb-1">
+            Personal Loan Benefits:
+            {{ finance.persLoanBenefits | number : "1.2-2" }}
+          </div>
+          <div class="mb-3">
+            Personal Loan Debt: {{ finance.persLoanDebt | number : "1.2-2" }}
+          </div>
+          <div class="mb-1">
+            Total Benefits: {{ finance.totalBenefits | number : "1.2-2" }}
+          </div>
+          <div class="mb-1">
+            Total Debt: {{ finance.totalDebt | number : "1.2-2" }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

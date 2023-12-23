@@ -3,20 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MortgageComponent } from './mortgage/mortgage.component';
+import { FormsModule } from '@angular/forms';
+import { NavComponent } from './nav/nav.component';
+import { FlexMortgageComponent } from './flex-mortgage/flex-mortgage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    MortgageComponent,
+    NavComponent,
+    FlexMortgageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
-  ],
+    FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
