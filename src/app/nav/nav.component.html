@@ -2,7 +2,7 @@
     <div class="container">
       <a class="navbar-brand" href="#" routerLink="/" routerLinkActive="active">
         <fa-icon [icon]="faCalculator"></fa-icon>
-        حاسبة القروض
+        {{"projectName" | translate}}
       </a>
       <button
         class="navbar-toggler"
@@ -18,15 +18,29 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item me-2" data-bs-toggle="collapse" data-bs-target="#navbarNav.show">
-                <a class="nav-link" href="#" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">القرض العقاري</a>
+                <a class="nav-link" href="#" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{"mortgage" | translate}}</a>
               </li>
             <li class="nav-item me-2" data-bs-toggle="collapse" data-bs-target="#navbarNav.show">
-              <a class="nav-link" href="#" routerLink="/flexMortgage" routerLinkActive="active">القرض العقاري المرن</a>
+              <a class="nav-link" href="#" routerLink="/flexMortgage" routerLinkActive="active">{{"flexMortgage" | translate}}</a>
             </li>
             <li class="nav-item me-2" data-bs-toggle="collapse" data-bs-target="#navbarNav.show">
-              <a class="nav-link" href="#" routerLink="/benefits" routerLinkActive="active">حاسبة الأرباح</a>
+              <a class="nav-link" href="#" routerLink="/benefits" routerLinkActive="active">{{"benefitsCalculator" | translate}}</a>
             </li>
         </ul>
+
+        <div class="language-selector">
+          <div class="input-group">
+            <div class="input-group-prepend p-0">
+              <span class="flag-icon" [ngClass]="{'flag-icon-sa': lang === 'ar', 'flag-icon-us': lang === 'en'}"></span>
+            </div>
+            <select class="form-select" (change)="changeLang($event)" [(ngModel)]="lang" name="language">
+              <option value="en">English</option>
+              <option value="ar">عربي</option>
+            </select>
+          </div>
+        </div>
+
       </div>
+
     </div>
   </nav>

@@ -11,6 +11,19 @@ import { BenefitsComponent } from './benefits/benefits.component';
 import { FinanceDetailsComponent } from './finance-details/finance-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+import { registerLocaleData } from '@angular/common';
+import localeAr from '@angular/common/locales/ar';
+
+registerLocaleData(localeAr, 'ar');
+
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +37,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+
     ],
   providers: [],
   bootstrap: [AppComponent]

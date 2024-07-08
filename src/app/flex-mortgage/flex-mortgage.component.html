@@ -5,7 +5,7 @@
   <div class="col-md-4">
     <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
       <div class="mb-3">
-        <label for="salary">الراتب (صافي)</label>
+        <label for="salary">{{"salary" | translate}}</label>
         <input
           name="salary"
           [(ngModel)]="salary"
@@ -16,7 +16,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="totalDeductionRate">نسبة الإستقطاع الكلية</label>
+        <label for="totalDeductionRate">{{"totalDeductionRate" | translate}}</label>
         <div class="input-group">
           <input
             name="totalDeductionRate"
@@ -32,7 +32,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="loanDeductionRate">نسبة إستقطاع القرض الشخصي</label>
+        <label for="loanDeductionRate">{{"persLoanDeductionRate" | translate}}</label>
         <div class="input-group">
           <input
             name="loanDeductionRate"
@@ -48,7 +48,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="mortgBenefitsRate">هامش ربح القرض العقاري السنوي</label>
+        <label for="mortgBenefitsRate">{{"mortgBenefitsRate" | translate}}</label>
         <div class="input-group">
           <input
             name="mortgBenefitsRate"
@@ -64,7 +64,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="loanBenefitsRate">هامش ربح القرض الشخصي السنوي</label>
+        <label for="loanBenefitsRate">{{"loanBenefitsRate" | translate}}</label>
         <div class="input-group">
           <input
             name="loanBenefitsRate"
@@ -80,7 +80,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="years">المدة (بالسنوات)</label>
+        <label for="years">{{"periodByYears" | translate}}</label>
 
         <input
           name="years"
@@ -94,7 +94,7 @@
       <div class="d-grid">
         <button class="btn btn-success btn-lg" type="submit">
           <fa-icon [icon]="faCalculator"></fa-icon>
-          حساب
+          {{"calculate" | translate}}
         </button>
       </div>
     </form>

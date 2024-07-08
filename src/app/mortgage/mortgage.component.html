@@ -1,11 +1,11 @@
 <div class="d-lg-none d-block mb-3">
-  <h2>القرض العقاري</h2>
+  <h2>{{"mortgage" | translate}}</h2>
 </div>
 <div class="row">
   <div class="col-md-4">
     <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
       <div class="mb-3">
-        <label for="salary">الراتب (صافي)</label>
+        <label for="salary">{{"salary" | translate}}</label>
         <input
           name="salary"
           [(ngModel)]="salary"
@@ -16,7 +16,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="deductionRate">نسبة الإستقطاع</label>
+        <label for="deductionRate">{{"deductionRate" | translate}}</label>
         <div class="input-group">
           <input
             name="deductionRate"
@@ -32,7 +32,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="benefitsRate">هامش الربح السنوي</label>
+        <label for="benefitsRate">{{"benefitsRate" | translate}}</label>
         <div class="input-group">
           <input
             name="benefitsRate"
@@ -47,7 +47,7 @@
         </div>
       </div>
       <div class="mb-3">
-        <label for="years">المدة (بالسنوات)</label>
+        <label for="years">{{"periodByYears" | translate}}</label>
 
         <input
           name="years"
@@ -61,7 +61,7 @@
       <div class="d-grid">
         <button class="btn btn-success btn-lg" type="submit">
           <fa-icon [icon]="faCalculator"></fa-icon>
-          حساب
+          {{"calculate" | translate}}
         </button>
       </div>
     </form>

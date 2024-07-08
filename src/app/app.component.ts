@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,44 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'loaning-calculator';
+  constructor(private translateService: TranslateService){
+    const defaultLangCode = "en";
+    this.translateService.setDefaultLang(defaultLangCode);
+    this.translateService.use(localStorage.getItem("lang") || defaultLangCode);
+
+    this.translateService.onLangChange.subscribe((event) => {
+      this.setDirectionAndStyles(event.lang);
+    });
+  }
+
+  private setDirectionAndStyles(language: string) {
+    const htmlTag = document.documentElement;
+    if (language === 'ar') {
+   htmlTag.setAttribute('dir', 'rtl');
+      this.loadCSS('assets/bootstrap/bootstrap.rtl.min.css');
+      this.unloadCSS('assets/bootstrap/bootstrap.min.css');
+    } else {
+      htmlTag.setAttribute('dir', 'ltr');
+      this.loadCSS('assets/bootstrap/bootstrap.min.css');
+      this.unloadCSS('assets/bootstrap/bootstrap.rtl.min.css');
+    }
+  }
+
+  private loadCSS(href: string) {
+    let linkElement = document.querySelector(`link[href="${href}"]`);
+    if (!linkElement) {
+      linkElement = document.createElement('link');
+      linkElement.setAttribute('rel', 'stylesheet');
+      linkElement.setAttribute('href', href);
+      document.head.appendChild(linkElement);
+    }
+  }
+
+  private unloadCSS(href: string) {
+    const linkElement = document.querySelector(`link[href="${href}"]`);
+    if (linkElement) {
+      document.head.removeChild(linkElement);
+    }
+  }
+
 }

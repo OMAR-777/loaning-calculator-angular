@@ -1,0 +1,23 @@
+.language-selector {
+    display: flex;
+    align-items: center;
+  }
+  
+  .language-selector .flag-icon {
+    font-size: 35px; /* Adjust icon size */
+    height: auto;
+    margin-right: 1px; /* Space between flag and select */
+    margin-left: 1px; /* Space between flag and select */
+    border-end-start-radius: 0.375rem;
+    border-start-start-radius: 0.375rem;
+  }
+  
+  .language-selector .form-select {
+    padding: 0 10px 0 10px;
+    height: 35px;
+    width: 100px;
+    background-color: #fff; /* Background color */
+    cursor: pointer; /* Cursor style */
+  }
+  
+  
