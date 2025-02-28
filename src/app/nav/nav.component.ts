@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -7,15 +7,11 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit {
+export class NavComponent {
   faCalculator = faCalculator;
-  lang='';
+  @Input() lang!: string;
 
   constructor(private translateService: TranslateService){}
-
-  ngOnInit(): void {
-    this.lang = localStorage.getItem("lang") || "ar";
-  }
 
   changeLang(lang: any){
     const selectedLang = lang.target.value;

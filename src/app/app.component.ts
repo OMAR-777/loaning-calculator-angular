@@ -7,10 +7,14 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  defaultLangCode: string = "en";
+  langCode: string;
+
   constructor(private translateService: TranslateService){
-    const defaultLangCode = "en";
-    this.translateService.setDefaultLang(defaultLangCode);
-    this.translateService.use(localStorage.getItem("lang") || defaultLangCode);
+    this.langCode = localStorage.getItem("lang") ?? this.defaultLangCode;
+
+    this.translateService.setDefaultLang(this.defaultLangCode);
+    this.translateService.use(this.langCode || this.defaultLangCode);
 
     this.translateService.onLangChange.subscribe((event) => {
       this.setDirectionAndStyles(event.lang);
