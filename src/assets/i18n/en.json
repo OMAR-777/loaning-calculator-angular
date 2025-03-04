@@ -1,5 +1,5 @@
 {
-	"greeting": "Hello world",
+	"benefitsCalc": "Benefits Calculator",
 	"loan": "Loan",
 	"periodByYears": "Period (Years)",
 	"debt": "Debt",
@@ -20,6 +20,7 @@
 	"persLoanBenefits": "Personal Loan Benefits",
 	"persLoanDebt": "Personal Loan Debt",
 	"totalDebt": "Total Debt",
+	"flexMortgage": "Flexible Mortgage",
 	"salary": "Salary",
 	"totalDeductionRate": "Total Deduction Rate",
 	"persLoanDeductionRate": "Personal Loan Deduction Rate",
@@ -27,6 +28,5 @@
 	"loanBenefitsRate": "Personal Benefits Rate",
 	"deductionRate": "Deduction Rate",
 	"projectName": "Loan Calculator",
-	"flexMortgage": "Flexible Mortgage",
 	"benefitsCalculator": "Benefits Calculator"
 }

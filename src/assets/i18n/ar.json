@@ -1,5 +1,5 @@
 {
-	"greeting": "مرحبا",
+	"benefitsCalc": "حاسبة الأرباح",
 	"loan": "القرض",
 	"periodByYears": "المدة (بالسنوات)",
 	"debt": "المديونية",
@@ -20,6 +20,7 @@
 	"persLoanBenefits": "ارباح القرض الشخصي",
 	"persLoanDebt": "مديونية القرض الشخصي",
 	"totalDebt": "اجمالي المديونية",
+	"flexMortgage": "القرض العقاري المرن",
 	"salary": "الراتب (صافي)",
 	"totalDeductionRate": "نسبة الإستقطاع الكلية",
 	"persLoanDeductionRate": "نسبة إستقطاع القرض الشخصي",
@@ -27,6 +28,5 @@
 	"loanBenefitsRate": "هامش ربح القرض الشخصي السنوي",
 	"deductionRate": "نسبة الإستقطاع",
 	"projectName": "حاسبة القروض",
-	"flexMortgage": "القرض العقاري المرن",
 	"benefitsCalculator": "حاسبة الأرباح"
 }

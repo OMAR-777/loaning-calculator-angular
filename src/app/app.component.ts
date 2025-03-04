@@ -14,7 +14,7 @@ export class AppComponent {
     this.langCode = localStorage.getItem("lang") ?? this.defaultLangCode;
 
     this.translateService.setDefaultLang(this.defaultLangCode);
-    this.translateService.use(this.langCode || this.defaultLangCode);
+    this.translateService.use(this.langCode);
 
     this.translateService.onLangChange.subscribe((event) => {
       this.setDirectionAndStyles(event.lang);
