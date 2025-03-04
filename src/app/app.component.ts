@@ -12,6 +12,8 @@ export class AppComponent {
   langCode: string;
 
   constructor(private translateService: TranslateService, themeService: ThemeService){
+    themeService.loadTheme();
+
     this.langCode = localStorage.getItem("lang") ?? this.defaultLangCode;
 
     this.translateService.setDefaultLang(this.defaultLangCode);

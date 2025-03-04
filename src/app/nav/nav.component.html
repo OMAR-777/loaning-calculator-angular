@@ -40,6 +40,14 @@
           </div>
         </div>
 
+        <div class="p-2 mx-3 align-items-center justify-content-center d-flex" >
+          <fa-icon [icon]="faSun"></fa-icon>
+          <div class="ms-2 form-check form-switch">
+            <input class="form-check-input" type="checkbox" (change)="toggleTheme()" [checked]="this.getCurrentTheme() == 'dark'" />
+          </div>
+          <fa-icon [icon]="faMoon"></fa-icon>
+        </div>
+
       </div>
 
     </div>

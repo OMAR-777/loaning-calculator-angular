@@ -18,5 +18,9 @@
     width: 100px;
     cursor: pointer; /* Cursor style */
   }
+
+  fa-icon{
+    color: #ffff;
+  }
   
   
