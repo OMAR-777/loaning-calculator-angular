@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { ThemeService } from './_svcs/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ export class AppComponent {
   defaultLangCode: string = "en";
   langCode: string;
 
-  constructor(private translateService: TranslateService){
+  constructor(private translateService: TranslateService, themeService: ThemeService){
     this.langCode = localStorage.getItem("lang") ?? this.defaultLangCode;
 
     this.translateService.setDefaultLang(this.defaultLangCode);
