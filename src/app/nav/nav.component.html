@@ -31,9 +31,9 @@
         <div class="language-selector">
           <div class="input-group">
             <div class="input-group-prepend p-0">
-              <span class="flag-icon" [ngClass]="{'flag-icon-sa': lang === 'ar', 'flag-icon-us': lang === 'en'}"></span>
+              <span class="flag-icon" [ngClass]="{'flag-icon-sa': this.getCurrentLang() === 'ar', 'flag-icon-us': this.getCurrentLang() === 'en'}"></span>
             </div>
-            <select class="form-select" (change)="changeLang($event)" [(ngModel)]="lang" name="language">
+            <select class="form-select" (change)="changeLang($event)" [ngModel]="this.getCurrentLang()" name="language">
               <option value="en">English</option>
               <option value="ar">عربي</option>
             </select>

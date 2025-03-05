@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faCalculator, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
-import { TranslateService } from '@ngx-translate/core';
 import { ThemeService } from '../_svcs/theme.service';
+import { TranslationService } from '../_svcs/translation.service';
 
 @Component({
   selector: 'app-nav',
@@ -13,20 +13,20 @@ export class NavComponent {
   faSun = faSun;
   faMoon = faMoon;
   
-  @Input() lang!: string;
-
-  constructor(private translateService: TranslateService, private themeService: ThemeService){}
+  constructor(private translationService : TranslationService, private themeService: ThemeService){
+  }
 
   changeLang(lang: any){
     const selectedLang = lang.target.value;
-    localStorage.setItem("lang", selectedLang);
-    lang = selectedLang;
-    this.translateService.use(selectedLang);
-
+    this.translationService.switchLang(selectedLang);
   }
 
   toggleTheme(){
     this.themeService.toggleTheme();
+  }
+
+  getCurrentLang(){
+    return this.translationService.getCurrentLang();
   }
 
   getCurrentTheme(){
