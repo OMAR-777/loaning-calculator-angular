@@ -1,0 +1,61 @@
+<app-nav></app-nav>
+<div class="container" @pageAnimations>
+    <div class="row welcome-div">
+        <h1>{{"welcome" | translate}}</h1>
+        <p>{{"welcomeDesc" | translate}}</p>
+    </div>
+    <div class="row mt-3">
+
+        <div class="col-md mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4>{{"mortgage" | translate}}</h4>
+                </div>
+                <div class="card-body">
+                    {{'mortgageDesc' | translate}}
+                </div>
+                <div class="card-footer">
+                    <a routerLink="/mortgage" class="btn btn-primary">
+                        {{'calcNow' | translate}}
+                        <fa-icon [icon]="faArrowRight"></fa-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md mb-3">
+            <div class="card">
+                <div class="card-header">
+                    <h4>{{"flexMortgage" | translate}}</h4>
+                </div>
+                <div class="card-body">
+                    {{'flexMortgageDesc' | translate}}
+                </div>
+                <div class="card-footer">
+                    <a routerLink="/flexMortgage" class="btn btn-primary">
+                        {{'calcNow' | translate}}
+                        <fa-icon [icon]="faArrowRight"></fa-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md mb-3">
+            <div class="card">
+                <div class="card-header">
+                    <h4>{{"benefitsCalculator" | translate}}</h4>
+                </div>
+                <div class="card-body">
+                    {{'benefitsCalcDesc' | translate}}
+                </div>
+                <div class="card-footer">
+                    <a routerLink="/benefits" class="btn btn-primary">
+                        {{'calcNow' | translate}}
+                        <fa-icon [icon]="faArrowRight"></fa-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
