@@ -22,5 +22,22 @@
   fa-icon{
     color: #ffff;
   }
+
+  i.loan-calc-icon {
+    mask-image: url('/assets/imgs/lc-icon.svg'); /* For modern browsers */
+    -webkit-mask-image: url('/assets/imgs/lc-icon.svg'); /* Safari */
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    display: inline-block;
+    background-color: currentColor; /* This will apply the text color */
+    width: 40px; /* Set width */
+    height: 40px; /* Set height */
+  }
+
+  .loan-calc-icon-div {
+    display: flex;
+    align-items: center;
+  }
+  
   
   

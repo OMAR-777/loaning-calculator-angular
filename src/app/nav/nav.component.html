@@ -1,8 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black">
     <div class="container">
       <a class="navbar-brand" href="#" routerLink="/" routerLinkActive="active">
-        <fa-icon [icon]="faCalculator"></fa-icon>
-        {{"projectName" | translate}}
+        <div class="loan-calc-icon-div">
+          <i class="loan-calc-icon mx-1"></i>
+          <span>{{"projectName" | translate}}</span>
+        </div>
+        
       </a>
       <button
         class="navbar-toggler"
