@@ -4,63 +4,74 @@
 
         <ng-container *ngIf="financeType == FinanceType.MortgageLoan">
             <h5 class="card-title">
-                {{"mortgage" | translate}}: {{ finance.mortgLoan | number : "1.2-2" }}
+                {{"mortgage" | translate}}: 
+                <span class="currency">{{ finance.mortgLoan | number : '1.2-2' }}</span>
             </h5>
             <div class="mb-1">
                 {{"monthlyInstallment" | translate}}:
-                {{ finance.monthlyInstallment | number : "1.2-2" }}
+                <span class="currency">{{ finance.monthlyInstallment | number : "1.2-2" }}</span>
             </div>
             <div class="mb-1">
-                {{"mortgLoanBenefits" | translate}}: {{ finance.mortgLoanBenefits | number : "1.2-2" }}
+                {{"mortgLoanBenefits" | translate}}: 
+                <span class="currency">{{ finance.mortgLoanBenefits | number : "1.2-2" }}</span>
             </div>
             <div class="mb-1">
-                {{"mortgLoanDebt" | translate}}: {{ finance.mortgLoanDebt | number : "1.2-2" }}
+                {{"mortgLoanDebt" | translate}}: 
+                <span class="currency">{{ finance.mortgLoanDebt | number : "1.2-2" }}</span>
             </div>
         </ng-container>
 
         <ng-container *ngIf="financeType == FinanceType.FlexibleMortgageLoan">
             <h5 class="card-title">
-                {{"totalLoan" | translate}} {{ finance.totalLoan | number : "1.2-2" }}
+                {{"totalLoan" | translate}}:
+                <span class="currency">{{ finance.totalLoan | number : "1.2-2" }}</span>
             </h5>
             <div class="mb-1">
-                {{"monthlyInstallment" | translate}}: {{ finance.monthlyInstallment | number : "1.2-2" }}
+                {{"monthlyInstallment" | translate}}: 
+                <span class="currency">{{ finance.monthlyInstallment | number : "1.2-2" }}</span>
             </div>
             <div class="mb-1">
                 {{"fiveYrMortgMonthlyInstallment" | translate}}
-                {{ finance.mortgMonthlyInstallment | number : "1.2-2" }}
+                <span class="currency">{{ finance.mortgMonthlyInstallment | number : "1.2-2" }}</span>
             </div>
             <div class="mb-1">
                 {{"fiveYrPersMonthlyInstallment" | translate}}:
-                {{ finance.persMonthlyInstallment | number : "1.2-2" }}
+                <span class="currency">{{ finance.persMonthlyInstallment | number : "1.2-2" }}</span>
             </div>
             <hr>
             <div class="mb-1">
-                {{"mortgage" | translate}}: {{ finance.mortgLoan | number : "1.2-2" }}
+                {{"mortgage" | translate}}: 
+                <span class="currency">{{ finance.mortgLoan | number : "1.2-2" }}</span>
             </div>
             <div class="mb-1">
                 {{"mortgLoanBenefits" | translate}}:
-                {{ finance.mortgLoanBenefits | number : "1.2-2" }}
+                <span class="currency">{{ finance.mortgLoanBenefits | number : "1.2-2" }}</span>
             </div>
             <div class="mb-1">
-                {{"mortgLoanDebt" | translate}}: {{ finance.mortgLoanDebt | number : "1.2-2" }}
+                {{"mortgLoanDebt" | translate}}:
+                <span class="currency">{{ finance.mortgLoanDebt | number : "1.2-2" }}</span>
             </div>
             <hr>
             <div class="mb-1">
-                {{"persLoan" | translate}}: {{ finance.persLoan | number : "1.2-2" }}
+                {{"persLoan" | translate}}: 
+                <span class="currency">{{ finance.persLoan | number : "1.2-2" }}</span>
             </div>
             <div class="mb-1">
                 {{"persLoanBenefits" | translate}}:
-                {{ finance.persLoanBenefits | number : "1.2-2" }}
+                <span class="currency">{{ finance.persLoanBenefits | number : "1.2-2" }}</span>
             </div>
             <div class="mb-1">
-                {{"persLoanDebt" | translate}}: {{ finance.persLoanDebt | number : "1.2-2" }}
+                {{"persLoanDebt" | translate}}: 
+                <span class="currency">{{ finance.persLoanDebt | number : "1.2-2" }}</span>
             </div>
             <hr>
             <div class="mb-1">
-                {{"totalBenefits" | translate}}: {{ finance.totalBenefits | number : "1.2-2" }}
+                {{"totalBenefits" | translate}}: 
+                <span class="currency">{{ finance.totalBenefits | number : "1.2-2" }}</span>
             </div>
             <div class="mb-1">
-                {{"totalDebt" | translate}}: {{ finance.totalDebt | number : "1.2-2" }}
+                {{"totalDebt" | translate}}: 
+                <span class="currency">{{ finance.totalDebt | number : "1.2-2" }}</span>
             </div>
         </ng-container>
 

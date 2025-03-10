@@ -6,14 +6,13 @@
     <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
       <div class="mb-3">
         <label for="loan">{{"loan" | translate}}</label>
-        <input
-          name="loan"
-          [(ngModel)]="loan"
-          class="form-control me-2"
-          type="number"
-          placeholder="loan"
-        />
-      </div>
+        <div class="input-group">
+          <input name="loan" [(ngModel)]="loan" class="form-control me-2" type="number" placeholder="loan" />
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="currency symbol"></i></span>
+          </div>
+        </div>
+        </div>
 
       <div class="mb-3">
         <label for="years">{{"periodByYears" | translate}}</label>
@@ -29,14 +28,12 @@
 
       <div class="mb-3">
         <label for="debt">{{"debt" | translate}}</label>
-
-        <input
-          name="debt"
-          [(ngModel)]="debt"
-          class="form-control me-2"
-          type="number"
-          placeholder="debt"
-        />
+        <div class="input-group">
+          <input name="debt" [(ngModel)]="debt" class="form-control me-2" type="number" placeholder="debt" />
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="currency symbol"></i></span>
+          </div>
+        </div>
       </div>
 
       <div class="d-grid">
@@ -56,10 +53,12 @@
           {{"benefitsRate" | translate}}: {{ benefitsRate * 100 | number : "1.2-2" }}%
         </h5>
         <div class="mb-1">
-          {{"yearlyBenefits" | translate}}: {{ calcYearlyBenefits | number : "1.2-2" }}
+          {{"yearlyBenefits" | translate}}:
+          <span class="currency">{{ calcYearlyBenefits | number : "1.2-2" }}</span>
         </div>
         <div class="mb-1">
-          {{"totalBenefits" | translate}}: {{ calcTotalBenefits | number : "1.2-2" }}
+          {{"totalBenefits" | translate}}: 
+          <span class="currency">{{ calcTotalBenefits | number : "1.2-2" }}</span>
         </div>
       </div>
     </div>

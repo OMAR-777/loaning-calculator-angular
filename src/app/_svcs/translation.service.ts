@@ -45,10 +45,12 @@ export class TranslationService {
     const htmlTag = document.documentElement;
     if (language === 'ar') {
       htmlTag.setAttribute('dir', 'rtl');
+      htmlTag.setAttribute('lang', 'ar');
       this.loadCSS('assets/bootstrap/bootstrap.rtl.min.css');
       this.unloadCSS('assets/bootstrap/bootstrap.min.css');
     } else {
       htmlTag.setAttribute('dir', 'ltr');
+      htmlTag.setAttribute('lang', 'en');
       this.loadCSS('assets/bootstrap/bootstrap.min.css');
       this.unloadCSS('assets/bootstrap/bootstrap.rtl.min.css');
     }

@@ -6,13 +6,18 @@
     <form #loginForm="ngForm" (ngSubmit)="calculate()" autocomplete="off">
       <div class="mb-3">
         <label for="salary">{{"salary" | translate}}</label>
-        <input
-          name="salary"
-          [(ngModel)]="salary"
-          class="form-control me-2"
-          type="number"
-          placeholder="Salary"
-        />
+        <div class="input-group">
+          <input
+            name="salary"
+            [(ngModel)]="salary"
+            class="form-control me-2"
+            type="number"
+            placeholder="Salary"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="currency symbol"></i></span>
+          </div>
+        </div>
       </div>
 
       <div class="mb-3">

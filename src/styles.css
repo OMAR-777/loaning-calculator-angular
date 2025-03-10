@@ -3,3 +3,22 @@
 fa-icon{
     margin: 0 0.3rem !important;
 }
+
+[lang = "ar"] .currency::before {
+    content: "SAR";
+    font-size: 0.6em;
+    font-style: normal;
+    margin-right: 4px;
+}
+
+[lang = "en"] .currency::before {
+    content: "$";
+    font-size: 0.9em;
+    font-style: normal;
+    margin-right: 1px;
+}
+
+i.currency.symbol::before{
+    margin: 0;
+    font-size: 1em;
+}
