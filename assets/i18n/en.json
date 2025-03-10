@@ -1,5 +1,5 @@
 {
-	"greeting": "Hello world",
+	"benefitsCalc": "Benefits Calculator",
 	"loan": "Loan",
 	"periodByYears": "Period (Years)",
 	"debt": "Debt",
@@ -20,13 +20,20 @@
 	"persLoanBenefits": "Personal Loan Benefits",
 	"persLoanDebt": "Personal Loan Debt",
 	"totalDebt": "Total Debt",
+	"flexMortgage": "Flexible Mortgage",
 	"salary": "Salary",
 	"totalDeductionRate": "Total Deduction Rate",
 	"persLoanDeductionRate": "Personal Loan Deduction Rate",
 	"mortgBenefitsRate": "Mortgage Benefits Rate",
 	"loanBenefitsRate": "Personal Benefits Rate",
+	"welcome": "Welcome to the Loaning Calculator",
+	"welcomeDesc": "Calculate financing options for mortgages and flexible mortgages, and estimate the bank's overall benefits.",
+	"mortgageDesc": "Calculate your monthly payments for traditional mortgage financing based on your salary, interest rate, and loan term.",
+	"calcNow": "Calculate Now",
+	"flexMortgageDesc": "Calculate financing for flexible mortgages, which combine mortgage financing with personal finance for the first five years — maximizing your total financing amount at a lower benefit rate.",
+	"benefitsCalculator": "Benefits Calculator",
+	"benefitsCalcDesc": "Estimate how much the bank will benefit from your financing options and compare the impact of different financing structures on your total repayment.",
 	"deductionRate": "Deduction Rate",
-	"projectName": "Loan Calculator",
-	"flexMortgage": "Flexible Mortgage",
-	"benefitsCalculator": "Benefits Calculator"
+	"projectName": "Loaning Calculator",
+	"PAGE_TITLE": "Loan Calculator"
 }
