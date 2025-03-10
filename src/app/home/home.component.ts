@@ -1,6 +1,6 @@
 import { animate, query, sequence, stagger, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faChartLine, faExchangeAlt, faHouse } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -29,5 +29,8 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 })
 export class HomeComponent {
   faArrowRight = faArrowRight;
+  faHouse = faHouse;
+  faExchangeAlt = faExchangeAlt;
+  faChartLine = faChartLine;
 
 }
