@@ -26,7 +26,7 @@ export class BusyService {
     }
   }
 
-  fakeLoadingSpinner(callback: () => any, delay: number = 1000) {
+  fakeLoadingSpinner(callback: () => any, delay: number = 650) {
     this.spinnerService.show(undefined, {
       type: 'ball-clip-rotate',
       bdColor: 'rgba(0,0,0,0.7)',

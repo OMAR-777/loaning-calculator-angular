@@ -4,14 +4,18 @@ import { isEmptyObject } from '../_utils/helpers';
 import { FinanceType } from '../_models/enums';
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { BusyService } from '../_svcs/busy.service';
+import { CalculationService } from '../_svcs/calculation.service';
 
 @Component({
   selector: 'app-flex-mortgage',
   templateUrl: './flex-mortgage.component.html',
-  styleUrls: ['./flex-mortgage.component.css']
+  styleUrls: ['./flex-mortgage.component.css'],
 })
 export class FlexMortgageComponent {
-  constructor(private busyService: BusyService){}
+  constructor(
+    private calcService: CalculationService,
+    private busyService: BusyService
+  ) {}
 
   faCalculator = faCalculator;
 
@@ -25,27 +29,16 @@ export class FlexMortgageComponent {
   finance?: FinanceDetails;
   FinanceType = FinanceType;
 
-  calculate(){
+  calculate() {
     this.busyService.fakeLoadingSpinner(() => {
-    this.finance = {} as FinanceDetails;
-
-    this.finance.monthlyInstallment = this.salary * (this.totalDeductionRate/100);
-    this.finance.mortgMonthlyInstallment = ((this.totalDeductionRate - this.loanDeductionRate)/100)*this.salary;
-    this.finance.persMonthlyInstallment = (this.loanDeductionRate/100)*this.salary;
-
-
-    this.finance.totalDebt = this.finance.monthlyInstallment * 12 * this.years;
-    this.finance.mortgLoanDebt = this.finance.mortgMonthlyInstallment*12*5 + this.finance.monthlyInstallment * 12 * (this.years - 5);
-    this.finance.persLoanDebt = this.finance.totalDebt - this.finance.mortgLoanDebt;
-
-    this.finance.mortgLoan = (this.finance.mortgLoanDebt) / (1 + (this.mortgBenefitsRate/100)*this.years);
-    this.finance.persLoan = (this.finance.totalDebt - this.finance.mortgLoanDebt)/(1 + (this.loanBenefitsRate/100) * 5);
-    this.finance.totalLoan = this.finance.mortgLoan + this.finance.persLoan;
-
-    this.finance.mortgLoanBenefits = this.finance.mortgLoanDebt - this.finance.mortgLoan;
-    this.finance.persLoanBenefits = this.finance.persLoanDebt - this.finance.persLoan;
-    this.finance.totalBenefits = this.finance.mortgLoanBenefits + this.finance.persLoanBenefits;
+      this.finance = this.calcService.calculateFlexMortgage(
+        this.salary,
+        this.totalDeductionRate,
+        this.loanDeductionRate,
+        this.mortgBenefitsRate,
+        this.loanBenefitsRate,
+        this.years
+      );
     });
   }
-
 }
