@@ -21,6 +21,8 @@ import localeAr from '@angular/common/locales/ar';
 import { HomeComponent } from './home/home.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
+import { AdsenseModule } from 'ng2-adsense';
+
 registerLocaleData(localeAr, 'ar');
 
 export function HttpLoaderFactory(http: HttpClient){
@@ -35,7 +37,7 @@ export function HttpLoaderFactory(http: HttpClient){
     FlexMortgageComponent,
     BenefitsComponent,
     FinanceDetailsComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,12 +50,17 @@ export function HttpLoaderFactory(http: HttpClient){
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
+        deps: [HttpClient],
+      },
     }),
     NgxSpinnerModule.forRoot(),
-    ],
+    // shown passing global defaults (optional)
+    AdsenseModule.forRoot({
+      adClient: 'ca-pub-8588747252057442',
+      adSlot: 6614473835,
+    }),
+  ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
