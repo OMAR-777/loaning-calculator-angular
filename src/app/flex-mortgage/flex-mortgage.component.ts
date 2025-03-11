@@ -3,6 +3,7 @@ import { FinanceDetails } from '../_models/financeDetails';
 import { isEmptyObject } from '../_utils/helpers';
 import { FinanceType } from '../_models/enums';
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
+import { BusyService } from '../_svcs/busy.service';
 
 @Component({
   selector: 'app-flex-mortgage',
@@ -10,6 +11,8 @@ import { faCalculator } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./flex-mortgage.component.css']
 })
 export class FlexMortgageComponent {
+  constructor(private busyService: BusyService){}
+
   faCalculator = faCalculator;
 
   salary: number = 9800;
@@ -23,6 +26,7 @@ export class FlexMortgageComponent {
   FinanceType = FinanceType;
 
   calculate(){
+    this.busyService.fakeLoadingSpinner(() => {
     this.finance = {} as FinanceDetails;
 
     this.finance.monthlyInstallment = this.salary * (this.totalDeductionRate/100);
@@ -41,6 +45,7 @@ export class FlexMortgageComponent {
     this.finance.mortgLoanBenefits = this.finance.mortgLoanDebt - this.finance.mortgLoan;
     this.finance.persLoanBenefits = this.finance.persLoanDebt - this.finance.persLoan;
     this.finance.totalBenefits = this.finance.mortgLoanBenefits + this.finance.persLoanBenefits;
+    });
   }
 
 }

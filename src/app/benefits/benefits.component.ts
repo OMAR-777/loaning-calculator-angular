@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
+import { BusyService } from '../_svcs/busy.service';
 
 @Component({
   selector: 'app-benefits',
@@ -7,6 +8,7 @@ import { faCalculator } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./benefits.component.css']
 })
 export class BenefitsComponent {
+  constructor(private busyService: BusyService){}
   faCalculator = faCalculator;
 
   loan: number = 163747;
@@ -18,8 +20,10 @@ export class BenefitsComponent {
   calcTotalBenefits?: number;
 
   calculate(){
-    this.benefitsRate = (this.debt - this.loan) / (this.years * this.loan);
-    this.calcYearlyBenefits = this.benefitsRate * this.loan;
-    this.calcTotalBenefits = this.calcYearlyBenefits * 5;
+    this.busyService.fakeLoadingSpinner(() => {
+      this.benefitsRate = (this.debt - this.loan) / (this.years * this.loan);
+      this.calcYearlyBenefits = this.benefitsRate * this.loan;
+      this.calcTotalBenefits = this.calcYearlyBenefits * 5;
+    });
   }
 }

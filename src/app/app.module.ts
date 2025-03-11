@@ -19,6 +19,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeAr from '@angular/common/locales/ar';
 import { HomeComponent } from './home/home.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 registerLocaleData(localeAr, 'ar');
 
@@ -50,7 +51,7 @@ export function HttpLoaderFactory(http: HttpClient){
         deps: [HttpClient]
       }
     }),
-
+    NgxSpinnerModule.forRoot(),
     ],
   providers: [],
   bootstrap: [AppComponent]
